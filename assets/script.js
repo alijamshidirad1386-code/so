@@ -1,79 +1,277 @@
-(()=>{
-'use strict';
-const items=[
-{"id":"01","title":"نچرال امضایی","style":"natural","label":"نچرال","description":"تارهای ظریف با شروع نرم و پایان تمیز؛ مناسب برای پر کردن بخش‌های خالی بدون حس سنگینی.","image":"assets/images/portfolio-01.webp"},
-{"id":"02","title":"فِیثر لایت","style":"fluffy","label":"کرکی","description":"تارهای رو به بالا با فضای منفی کنترل‌شده؛ ظاهر مرتب اما سبک و هوا‌دار.","image":"assets/images/portfolio-02.webp"},
-{"id":"03","title":"کُمبو بالانس","style":"combo","label":"ترکیبی","description":"ترکیب هاشور مویی و سایه‌ی خیلی نرم برای وقتی که هم بافت مو را می‌خواهی هم عمق ملایم.","image":"assets/images/portfolio-03.webp"},
-{"id":"04","title":"سافت پودری","style":"powder","label":"پودری","description":"سایه‌ی محو با تمرکز بیشتر در دم ابرو؛ مناسب قاب مرتب‌تر و میکاپ‌پسند.","image":"assets/images/portfolio-04.webp"},
-{"id":"05","title":"نچرال بِلِند","style":"natural","label":"نچرال","description":"فرم طبیعی و کشیده با گوشه‌ی داخلی روشن و انتهای کنترل‌شده.","image":"assets/images/portfolio-05.webp"},
-{"id":"06","title":"براشد فِیثر","style":"fluffy","label":"کرکی","description":"چیدمان عمودی تارها با حس براش‌خورده و لطافت بیشتر در تاج.","image":"assets/images/portfolio-06.webp"},
-{"id":"07","title":"کُمبو سافت","style":"combo","label":"ترکیبی","description":"هاشورهای سبک در جلو و سایه‌ی تدریجی در نیمه‌ی بیرونی برای تعادل قاب صورت.","image":"assets/images/portfolio-07.webp"},
-{"id":"08","title":"پودر مخملی","style":"powder","label":"پودری","description":"بافت پودری مخملی با کنتراست کم و لبه‌های نرم برای نتیجه‌ی ظریف.","image":"assets/images/portfolio-08.webp"},
-{"id":"09","title":"هیرلاین نچرال","style":"natural","label":"نچرال","description":"تأکید روی تارهای تکی و جهت رشد طبیعی برای ظاهر بسیار مینیمال.","image":"assets/images/portfolio-09.webp"},
-{"id":"10","title":"فِیثر کلین","style":"fluffy","label":"کرکی","description":"تارهای تفکیک‌شده و مرتب، مناسب سبک‌های مدرن و ابروهای رو به بالا.","image":"assets/images/portfolio-10.webp"},
-{"id":"11","title":"کُمبو رز","style":"combo","label":"ترکیبی","description":"بافت مو در بخش داخلی و سایه‌ی رقیق در دم برای قاب نرم و زنانه.","image":"assets/images/portfolio-11.webp"},
-{"id":"12","title":"پودر گلد","style":"powder","label":"پودری","description":"سایه‌ی گرم و یکنواخت با تمرکز ظریف روی قوس و دم.","image":"assets/images/portfolio-12.webp"},
-{"id":"13","title":"آرچ نچرال","style":"natural","label":"نچرال","description":"قوس کنترل‌شده و تاج آرام برای حفظ حالت طبیعی چهره.","image":"assets/images/portfolio-13.webp"},
-{"id":"14","title":"فِیثر اِیر","style":"fluffy","label":"کرکی","description":"سبک‌ترین اجرای کرکی در این مجموعه؛ حجم بصری بالا بدون لبه‌ی سنگین.","image":"assets/images/portfolio-14.webp"},
-{"id":"15","title":"نانو کُمبو","style":"combo","label":"ترکیبی","description":"جزئیات مویی دقیق در جلو و پخش سایه در دم برای نتیجه‌ی متعادل.","image":"assets/images/portfolio-15.webp"},
-{"id":"16","title":"سافت میست","style":"powder","label":"پودری","description":"هاله‌ی سایه‌ای نرم و یکپارچه با تمرکز کمتر در تاج.","image":"assets/images/portfolio-16.webp"},
-{"id":"17","title":"امضای سون گول","style":"natural","label":"نچرال","description":"فرم شخصی‌سازی‌شده برای چهره‌هایی که ظاهر طبیعی و لوکس را هم‌زمان می‌خواهند.","image":"assets/images/portfolio-17.webp"},
-{"id":"18","title":"گلاس کُمبو","style":"combo","label":"ترکیبی","description":"قاب تمیز با جزئیات تار و پایان ساتنی و بسیار نرم.","image":"assets/images/portfolio-18.webp"},
-{"id":"19","title":"فِیثر برونت","style":"fluffy","label":"کرکی","description":"کرکی، بلند و سبک؛ مناسب کسانی که ابروی پرحضور اما غیرمصنوعی می‌خواهند.","image":"assets/images/portfolio-19.webp"},
-{"id":"20","title":"مینیمال پودری","style":"powder","label":"پودری","description":"سایه‌ی کنترل‌شده برای کسانی که نتیجه‌ی مرتب و کم‌کنتراست را ترجیح می‌دهند.","image":"assets/images/portfolio-20.webp"}
-];
-const gallery=document.getElementById('gallery');
-const savedKey='songool-premium-favs-v2';
-const bookingKey='songool-premium-booking-v2';
-let saved=new Set(JSON.parse(localStorage.getItem(savedKey)||'[]'));
-let current=null;
-const faDigits=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
-const escapeHTML=s=>String(s).replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[m]));
-function syncSavedCount(){const el=document.getElementById('savedCount');if(el)el.textContent=faDigits(saved.size)}
-function styleMatch(item,f){return f==='all'||(f==='saved'?saved.has(item.id):item.style===f)}
-function render(){
- const f=document.querySelector('.filters button.active')?.dataset.filter||'all';
- const q=(document.getElementById('search').value||'').trim().toLowerCase();
- gallery.innerHTML='';
- const out=items.filter(x=>styleMatch(x,f)&&(!q||(`${x.title} ${x.label} ${x.description}`).toLowerCase().includes(q)));
- if(!out.length){gallery.innerHTML='<div class="empty">مدلی با این جست‌وجو پیدا نشد. فیلتر یا عبارت دیگری را امتحان کن.</div>';syncSavedCount();return}
- out.forEach((item,index)=>{
-  const card=document.createElement('article');card.className='work-card reveal';
-  const priority=index<4?' fetchpriority="high"':'';
-  card.innerHTML=`<button class="heart ${saved.has(item.id)?'saved':''}" aria-label="${saved.has(item.id)?'حذف ذخیره':'ذخیره مدل'}" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.5-8.8 11-8.8 11s-8.8-5.5-8.8-11A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"/></svg></button><button class="work-open" type="button"><span class="work-image"><img data-src="${item.image}" alt="${escapeHTML(item.title)} — تصویر مرجع" loading="lazy" decoding="async"${priority}><span class="work-number">${item.id}</span><span class="image-loader" aria-hidden="true"></span></span><span class="work-copy"><span class="work-meta">${escapeHTML(item.label)} · مرجع تصویری</span><strong>${escapeHTML(item.title)}</strong><span class="work-arrow">↙</span></span></button>`;
-  gallery.appendChild(card);
-  card.querySelector('.work-open').addEventListener('click',()=>openModal(item));
-  card.querySelector('.heart').addEventListener('click',e=>{e.stopPropagation();toggleSaved(item.id)});
- });
- observe();syncSavedCount();
-}
-function toggleSaved(id){saved.has(id)?saved.delete(id):saved.add(id);localStorage.setItem(savedKey,JSON.stringify([...saved]));render()}
-function openModal(item){current=item;const img=document.getElementById('modalImg');img.src=item.image;img.alt=item.title;document.getElementById('modalMeta').textContent=`${item.id} · ${item.label} · مرجع تصویری`;document.getElementById('modalTitle').textContent=item.title;document.getElementById('modalDesc').textContent=item.description;document.getElementById('modalFav').textContent=saved.has(item.id)?'حذف از ذخیره‌ها':'ذخیره مدل';document.getElementById('modal').showModal();document.body.style.overflow='hidden'}
-function closeModal(){document.getElementById('modal').close();document.body.style.overflow=''}
-document.getElementById('modalClose').addEventListener('click',closeModal);
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
-document.getElementById('modalFav').addEventListener('click',()=>{if(current){toggleSaved(current.id);document.getElementById('modalFav').textContent=saved.has(current.id)?'حذف از ذخیره‌ها':'ذخیره مدل'}});
-document.getElementById('modalBook').addEventListener('click',()=>{if(current){document.getElementById('style').value=current.label;document.getElementById('message').value=`مدل انتخابی: ${current.title}`;closeModal();document.getElementById('booking').scrollIntoView({behavior:'smooth'})}});
-document.querySelectorAll('#filters button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render()}));
-document.getElementById('search').addEventListener('input',render);
-const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}}),{threshold:.08});
-function observe(){document.querySelectorAll('.reveal:not(.in)').forEach(x=>observer.observe(x))}
-const imageObserver=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const img=e.target;if(img.dataset.src){img.src=img.dataset.src;img.removeAttribute('data-src');img.addEventListener('load',()=>img.closest('.work-image')?.classList.add('loaded'),{once:true})}imageObserver.unobserve(img)}),{rootMargin:'250px 0px'});
-function observeImages(){document.querySelectorAll('img[data-src]').forEach(img=>imageObserver.observe(img))}
-const originalObserve=observe;observe=()=>{originalObserve();observeImages()};
-const petalLayer=document.getElementById('petals');for(let i=0;i<14;i++){const p=document.createElement('span');p.className='petal';p.style.left=`${Math.random()*100}vw`;p.style.animationDuration=`${12+Math.random()*10}s`;p.style.animationDelay=`${-Math.random()*18}s`;p.style.transform=`rotate(${Math.random()*160}deg)`;petalLayer.appendChild(p)}
-const menuBtn=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu');
-menuBtn.addEventListener('click',()=>{const on=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',String(!on));menu.hidden=on});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.hidden=true;menuBtn.setAttribute('aria-expanded','false')}));
-document.getElementById('date').min=new Date().toISOString().slice(0,10);
-function setupBA(){document.querySelectorAll('.ba').forEach(box=>{const range=box.querySelector('.ba-range');const before=box.querySelector('.ba-before');const knob=box.querySelector('.ba-knob');const line=box.querySelector('.ba-line');const apply=()=>{const v=Number(range.value);before.style.width=`${100-v}%`;knob.style.right=`${v}%`;line.style.right=`${v}%`;line.style.opacity=v<=2||v>=98?0:1};range.addEventListener('input',apply);apply()})}
-setupBA();
-const form=document.getElementById('bookingForm'),status=document.getElementById('status');
-function getBooking(){const fd=new FormData(form);return{name:String(fd.get('name')||'').trim(),phone:String(fd.get('phone')||'').trim(),style:String(fd.get('style')||'').trim(),date:String(fd.get('date')||'').trim(),message:String(fd.get('message')||'').trim(),savedAt:new Date().toISOString()}}
-function fmt(b){return `درخواست رزرو سون گول حامد\n\nنام: ${b.name}\nشماره تماس: ${b.phone}\nاستایل: ${b.style||'تعیین نشده'}\nتاریخ پیشنهادی: ${b.date||'تعیین نشده'}\nتوضیحات: ${b.message||'ندارد'}`}
-form.addEventListener('submit',e=>{e.preventDefault();const b=getBooking();if(b.name.length<2||b.phone.replace(/\D/g,'').length<7){status.textContent='لطفاً نام و شماره تماس را کامل وارد کن.';status.classList.add('error');return}localStorage.setItem(bookingKey,JSON.stringify(b));status.classList.remove('error');status.textContent='درخواست روی همین دستگاه ذخیره شد. حالا می‌توانی خلاصه را کپی یا اشتراک‌گذاری کنی.'});
-async function getShareText(){const raw=localStorage.getItem(bookingKey);if(!raw){status.textContent='ابتدا فرم را ثبت کن.';return null}return fmt(JSON.parse(raw))}
-document.getElementById('shareBtn').addEventListener('click',async()=>{const text=await getShareText();if(!text)return;if(navigator.share){try{await navigator.share({title:'رزرو سون گول حامد',text});status.textContent='پنجره‌ی اشتراک‌گذاری باز شد.';return}catch(e){}}try{await navigator.clipboard.writeText(text);status.textContent='اشتراک‌گذاری در دسترس نبود؛ خلاصه در کلیپ‌بورد کپی شد.'}catch(e){status.textContent='کپی خودکار در این مرورگر در دسترس نیست.'}});
-document.getElementById('copyBtn').addEventListener('click',async()=>{const text=await getShareText();if(!text)return;try{await navigator.clipboard.writeText(text);status.textContent='خلاصه‌ی درخواست کپی شد.'}catch(e){status.textContent=text.replace(/\n/g,' · ')}});
-render();
+(() => {
+  'use strict';
+
+  const $ = (s, root = document) => root.querySelector(s);
+  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+  const faDigits = value => String(value).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+  // Mobile navigation
+  const menuButton = $('#menuButton');
+  const mobileMenu = $('#mobileMenu');
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!open));
+      mobileMenu.hidden = open;
+    });
+    $$('#mobileMenu a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.hidden = true;
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+  // Soft falling petals: light, limited, no canvas or library.
+  const petalLayer = $('#petalLayer');
+  if (petalLayer) {
+    for (let i = 0; i < 14; i += 1) {
+      const petal = document.createElement('span');
+      petal.className = 'petal';
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animationDuration = `${10 + Math.random() * 7}s`;
+      petal.style.animationDelay = `${-Math.random() * 14}s`;
+      petal.style.transform = `rotate(${Math.random() * 180}deg)`;
+      petalLayer.appendChild(petal);
+    }
+  }
+
+  // Scroll reveal
+  const revealObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 })
+    : null;
+  if (revealObserver) {
+    $$('.reveal').forEach(el => revealObserver.observe(el));
+  } else {
+    $$('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+  // Before / After sliders. The native range handles touch + mouse reliably.
+  $$('.before-after').forEach(panel => {
+    const range = $('.ba-range', panel);
+    if (!range) return;
+    const update = () => panel.style.setProperty('--split', `${range.value}%`);
+    range.addEventListener('input', update, { passive: true });
+    range.addEventListener('change', update, { passive: true });
+    update();
+  });
+
+  const items = [
+    ['01', 'نچرال امضایی', 'natural', 'نچرال', 'تارهای ظریف با قوس آرام و حس بسیار طبیعی.', 'assets/images/portfolio-01.webp'],
+    ['02', 'فیدر کرکی', 'fluffy', 'کرکی', 'تارهای رو به بالا با فضای باز و بافت سبک.', 'assets/images/portfolio-02.webp'],
+    ['03', 'کمبو بالانس', 'combo', 'ترکیبی', 'ترکیب تارهای مویی و سایه‌ی ملایم برای عمق کنترل‌شده.', 'assets/images/portfolio-03.webp'],
+    ['04', 'سافت پودری', 'powder', 'پودری', 'هاله‌ی نرم و یکدست برای قاب مرتب‌تر.', 'assets/images/portfolio-04.webp'],
+    ['05', 'نچرال بلند', 'natural', 'نچرال', 'فرم کشیده و سبک با تاکید روی رشد طبیعی.', 'assets/images/portfolio-05.webp'],
+    ['06', 'براشد فِیثر', 'fluffy', 'کرکی', 'حالت براش‌خورده و لطافت بیشتر در تاج ابرو.', 'assets/images/portfolio-06.webp'],
+    ['07', 'کمبو سافت', 'combo', 'ترکیبی', 'هاشورهای سبک در جلو و سایه‌ی تدریجی در دم.', 'assets/images/portfolio-07.webp'],
+    ['08', 'پودر مخملی', 'powder', 'پودری', 'بافت پودری نرم با لبه‌های کنترل‌شده.', 'assets/images/portfolio-08.webp'],
+    ['09', 'هیرلاین نچرال', 'natural', 'نچرال', 'تاکید روی تارهای تکی و جهت رشد طبیعی.', 'assets/images/portfolio-09.webp'],
+    ['10', 'فِیثر کلین', 'fluffy', 'کرکی', 'تارهای جدا از هم برای سبک مدرن و مرتب.', 'assets/images/portfolio-10.webp'],
+    ['11', 'کمبو رز', 'combo', 'ترکیبی', 'بافت مو در بخش داخلی و سایه‌ی رقیق در دم.', 'assets/images/portfolio-11.webp'],
+    ['12', 'پودر گلد', 'powder', 'پودری', 'سایه‌ی گرم و نرم با تاکید ظریف روی قوس.', 'assets/images/portfolio-12.webp'],
+    ['13', 'آرچ نچرال', 'natural', 'نچرال', 'قوس کنترل‌شده و تاج آرام برای حفظ حس طبیعی.', 'assets/images/portfolio-13.webp'],
+    ['14', 'فِیثر اِیر', 'fluffy', 'کرکی', 'حجم بصری بالا بدون لبه‌ی سنگین.', 'assets/images/portfolio-14.webp'],
+    ['15', 'نانو کمبو', 'combo', 'ترکیبی', 'جزئیات مویی دقیق همراه با پخش سایه در دم.', 'assets/images/portfolio-15.webp'],
+    ['16', 'سافت میست', 'powder', 'پودری', 'هاله‌ی سایه‌ای نرم با تمرکز کمتر در تاج.', 'assets/images/portfolio-16.webp'],
+    ['17', 'امضای سون گول', 'natural', 'نچرال', 'فرم شخصی‌سازی‌شده برای استایل طبیعی و لوکس.', 'assets/images/portfolio-17.webp'],
+    ['18', 'گلاس کمبو', 'combo', 'ترکیبی', 'قاب تمیز با جزئیات تار و پایان بسیار نرم.', 'assets/images/portfolio-18.webp'],
+    ['19', 'فِیثر برونت', 'fluffy', 'کرکی', 'پر، سبک و طبیعی برای ابروی پرحضور.', 'assets/images/portfolio-19.webp'],
+    ['20', 'مینیمال پودری', 'powder', 'پودری', 'سایه‌ی کنترل‌شده برای نتیجه‌ی مرتب و کم‌کنتراست.', 'assets/images/portfolio-20.webp']
+  ].map(([id, title, style, label, description, image]) => ({ id, title, style, label, description, image }));
+
+  const gallery = $('#gallery');
+  const filters = $('#filters');
+  const searchInput = $('#searchInput');
+  const savedCount = $('#savedCount');
+  const savedKey = 'songool-favorites-v3';
+  let saved = new Set();
+  let currentItem = null;
+
+  try {
+    const stored = JSON.parse(localStorage.getItem(savedKey) || '[]');
+    if (Array.isArray(stored)) saved = new Set(stored.map(String));
+  } catch (_) {
+    saved = new Set();
+  }
+
+  const syncSavedCount = () => {
+    if (savedCount) savedCount.textContent = faDigits(saved.size);
+  };
+
+  const styleMatch = (item, filter) => filter === 'all' ? true : filter === 'saved' ? saved.has(item.id) : item.style === filter;
+
+  function renderGallery() {
+    if (!gallery) return;
+    const active = $('.filters button.active')?.dataset.filter || 'all';
+    const query = (searchInput?.value || '').trim().toLowerCase();
+    const matches = items.filter(item => {
+      if (!styleMatch(item, active)) return false;
+      if (!query) return true;
+      return `${item.title} ${item.label} ${item.description}`.toLowerCase().includes(query);
+    });
+
+    gallery.innerHTML = '';
+    if (!matches.length) {
+      gallery.innerHTML = '<div class="empty">مدلی با این فیلتر یا جست‌وجو پیدا نشد.</div>';
+      syncSavedCount();
+      return;
+    }
+
+    const frag = document.createDocumentFragment();
+    matches.forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'work-card reveal';
+      card.innerHTML = `
+        <button class="heart ${saved.has(item.id) ? 'saved' : ''}" type="button" aria-label="${saved.has(item.id) ? 'حذف از ذخیره‌ها' : 'ذخیره مدل'}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.5-8.8 11-8.8 11s-8.8-5.5-8.8-11A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"/></svg>
+        </button>
+        <button class="work-open" type="button">
+          <span class="work-image"><img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async" width="900" height="700"><span class="work-number">${item.id}</span></span>
+          <span class="work-copy"><span class="work-meta">${item.label} · مرجع تصویری</span><strong>${item.title}</strong><span class="work-arrow">↙</span></span>
+        </button>`;
+      frag.appendChild(card);
+
+      $('.work-open', card).addEventListener('click', () => openModal(item));
+      $('.heart', card).addEventListener('click', event => {
+        event.stopPropagation();
+        if (saved.has(item.id)) saved.delete(item.id); else saved.add(item.id);
+        localStorage.setItem(savedKey, JSON.stringify([...saved]));
+        renderGallery();
+      });
+    });
+    gallery.appendChild(frag);
+    syncSavedCount();
+    if (revealObserver) $$('.reveal:not(.in)', gallery).forEach(el => revealObserver.observe(el));
+    else $$('.reveal', gallery).forEach(el => el.classList.add('in'));
+  }
+
+  filters?.addEventListener('click', event => {
+    const button = event.target.closest('button[data-filter]');
+    if (!button) return;
+    $$('#filters button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    renderGallery();
+  });
+  searchInput?.addEventListener('input', renderGallery);
+
+  const modal = $('#workModal');
+  const modalImage = $('#modalImage');
+  const modalMeta = $('#modalMeta');
+  const modalTitle = $('#modalTitle');
+  const modalDesc = $('#modalDesc');
+  const modalFav = $('#modalFav');
+  const modalClose = $('#modalClose');
+
+  function openModal(item) {
+    currentItem = item;
+    if (!modal) return;
+    modalImage.src = item.image;
+    modalImage.alt = item.title;
+    modalMeta.textContent = `${item.id} · ${item.label} · مرجع تصویری`;
+    modalTitle.textContent = item.title;
+    modalDesc.textContent = item.description;
+    modalFav.textContent = saved.has(item.id) ? 'حذف از ذخیره‌ها' : 'ذخیره مدل';
+    if (typeof modal.showModal === 'function') modal.showModal();
+    else modal.setAttribute('open', '');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    if (!modal) return;
+    if (typeof modal.close === 'function') modal.close(); else modal.removeAttribute('open');
+    document.body.style.overflow = '';
+  }
+  modalClose?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+  modalFav?.addEventListener('click', () => {
+    if (!currentItem) return;
+    if (saved.has(currentItem.id)) saved.delete(currentItem.id); else saved.add(currentItem.id);
+    localStorage.setItem(savedKey, JSON.stringify([...saved]));
+    syncSavedCount();
+    modalFav.textContent = saved.has(currentItem.id) ? 'حذف از ذخیره‌ها' : 'ذخیره مدل';
+  });
+  $('#modalBook')?.addEventListener('click', () => {
+    if (!currentItem) return;
+    const styleMap = { natural:'نچرال', fluffy:'کرکی', combo:'ترکیبی', powder:'پودری' };
+    const style = $('#style');
+    const message = $('#message');
+    if (style) style.value = styleMap[currentItem.style] || '';
+    if (message) message.value = `مدل انتخابی: ${currentItem.title}`;
+    closeModal();
+    $('#booking')?.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+
+  // Booking form: local only, with share + copy fallbacks.
+  const form = $('#bookingForm');
+  const status = $('#formStatus');
+  const bookingKey = 'songool-booking-v3';
+  const date = $('#date');
+  if (date) date.min = new Date().toISOString().slice(0, 10);
+
+  function bookingData() {
+    const fd = new FormData(form);
+    return {
+      name: String(fd.get('name') || '').trim(),
+      phone: String(fd.get('phone') || '').trim(),
+      style: String(fd.get('style') || '').trim(),
+      date: String(fd.get('date') || '').trim(),
+      message: String(fd.get('message') || '').trim(),
+      savedAt: new Date().toISOString()
+    };
+  }
+  function bookingText(b) {
+    return `درخواست رزرو سون گول\n\nنام: ${b.name}\nشماره تماس: ${b.phone}\nاستایل: ${b.style || 'تعیین نشده'}\nتاریخ پیشنهادی: ${b.date || 'تعیین نشده'}\nتوضیحات: ${b.message || 'ندارد'}`;
+  }
+  form?.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = bookingData();
+    if (data.name.length < 2 || data.phone.length < 7) {
+      if (status) status.textContent = 'لطفاً نام و شماره تماس را کامل وارد کن.';
+      return;
+    }
+    localStorage.setItem(bookingKey, JSON.stringify(data));
+    if (status) status.textContent = 'درخواست روی همین دستگاه ذخیره شد. می‌توانی خلاصه را کپی یا با گوشی به اشتراک بگذاری.';
+  });
+
+  function getSavedBookingText() {
+    try {
+      const raw = localStorage.getItem(bookingKey);
+      return raw ? bookingText(JSON.parse(raw)) : '';
+    } catch (_) { return ''; }
+  }
+
+  $('#copyBtn')?.addEventListener('click', async () => {
+    const text = getSavedBookingText();
+    if (!text) { if (status) status.textContent = 'ابتدا فرم را ثبت کن.'; return; }
+    try {
+      await navigator.clipboard.writeText(text);
+      if (status) status.textContent = 'خلاصه درخواست کپی شد.';
+    } catch (_) {
+      if (status) status.textContent = 'کپی خودکار توسط مرورگر در دسترس نیست.';
+    }
+  });
+
+  $('#shareBtn')?.addEventListener('click', async () => {
+    const text = getSavedBookingText();
+    if (!text) { if (status) status.textContent = 'ابتدا فرم را ثبت کن.'; return; }
+    if (navigator.share) {
+      try {
+        await navigator.share({ title:'درخواست رزرو سون گول', text });
+        if (status) status.textContent = 'خلاصه درخواست به اشتراک گذاشته شد.';
+        return;
+      } catch (_) { /* user cancelled or share unavailable; use copy fallback */ }
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      if (status) status.textContent = 'گزینه اشتراک‌گذاری در این مرورگر در دسترس نیست؛ خلاصه کپی شد.';
+    } catch (_) {
+      if (status) status.textContent = 'اشتراک‌گذاری یا کپی در این مرورگر در دسترس نیست.';
+    }
+  });
+
+  renderGallery();
 })();
