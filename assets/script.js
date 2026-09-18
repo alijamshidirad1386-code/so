@@ -1,83 +1,40 @@
-const portfolio = [
-  {id:1,title:'نچرال ابریشمی',category:'natural',categoryFa:'نچرال',desc:'خطوط بسیار ظریف با فاصله‌های کنترل‌شده؛ مناسب چهره‌هایی که ظاهر آرام و مینیمال می‌خواهند.',tags:['کم‌تراکم','ظریف','روشن'],image:'assets/images/portfolio-01.svg'},
-  {id:2,title:'کرکی کلاسیک',category:'fluffy',categoryFa:'کرکی',desc:'تارهای سبک و پرتحرک با فرم رو به بالا برای جلوه‌ای جوان‌تر و مرتب‌تر.',tags:['کرکی','رو به بالا','طبیعی'],image:'assets/images/portfolio-02.svg'},
-  {id:3,title:'قوس نرم',category:'natural',categoryFa:'نچرال',desc:'قوس ملایم و انتهای کمی کشیده برای چشم‌هایی که فرم بازتر و تمیزتر می‌خواهند.',tags:['قوس نرم','تمیز','متعادل'],image:'assets/images/portfolio-03.svg'},
-  {id:4,title:'نچرال گرم',category:'natural',categoryFa:'نچرال',desc:'استایل گرم با هاشورهای نرم و تغییر جهت تدریجی در بخش میانی ابرو.',tags:['گرم','ملایم','نچرال'],image:'assets/images/portfolio-04.svg'},
-  {id:5,title:'فاکسی ظریف',category:'fluffy',categoryFa:'کرکی',desc:'انتهای کشیده و تارهای رو به بیرون، بدون ایجاد حس سنگینی یا فرم مصنوعی.',tags:['فاکسی','کشیده','سبک'],image:'assets/images/portfolio-05.svg'},
-  {id:6,title:'ترکیبی ساتن',category:'combo',categoryFa:'ترکیبی',desc:'تارهای مویی در ابتدای ابرو و شیدینگ کنترل‌شده در بدنه برای حجم بیشتر.',tags:['ترکیبی','حجم','ساتن'],image:'assets/images/portfolio-06.svg'},
-  {id:7,title:'پودری لطیف',category:'powder',categoryFa:'پودری',desc:'شیدینگ بسیار نرم و یکدست برای ظاهری مرتب که در عکس هم تمیز دیده می‌شود.',tags:['پودری','یکدست','نرم'],image:'assets/images/portfolio-07.svg'},
-  {id:8,title:'کرکی مهمانی',category:'fluffy',categoryFa:'کرکی',desc:'تارهای آشکارتر در بدنه با انتهای نرم؛ انتخابی جذاب برای چهره‌های گرافیکی‌تر.',tags:['کرکی','گرافیکی','پرجلوه'],image:'assets/images/portfolio-08.svg'},
-  {id:9,title:'نانو نچرال',category:'combo',categoryFa:'ترکیبی',desc:'حس تار به تار در کنار سایه‌ای بسیار سبک برای کسانی که ابروی خالی دارند.',tags:['نانو','تار به تار','حجم'],image:'assets/images/portfolio-09.svg'},
-  {id:10,title:'ابروی کلاسیک',category:'powder',categoryFa:'پودری',desc:'فرم متقارن و تمیز با شدت سایه کنترل‌شده در دم ابرو.',tags:['کلاسیک','مرتب','متقارن'],image:'assets/images/portfolio-10.svg'},
-  {id:11,title:'پَر نرم',category:'fluffy',categoryFa:'کرکی',desc:'تارهای شکسته و طبیعی برای کسانی که دوست دارند ظاهر ابرو مثل موی واقعی خوانده شود.',tags:['پَر','واقعی','سبک'],image:'assets/images/portfolio-11.svg'},
-  {id:12,title:'نچرال مینیمال',category:'natural',categoryFa:'نچرال',desc:'حداقل هاشور ممکن با تمرکز روی جاهای خالی؛ مخصوص طرفداران ظاهر «هیچ‌کار نکرده».',tags:['مینیمال','جاهای خالی','نامحسوس'],image:'assets/images/portfolio-12.svg'},
-  {id:13,title:'ترکیبی مخملی',category:'combo',categoryFa:'ترکیبی',desc:'شروع نرم و لطیف در سر ابرو، با بدنه‌ای پرتر و انتهایی تمیز و جمع‌وجور.',tags:['مخملی','ترکیبی','مرتب'],image:'assets/images/portfolio-13.svg'},
-  {id:14,title:'پودری نچرال',category:'powder',categoryFa:'پودری',desc:'سایه‌ای مات و سبک با مرزهای محو برای ابرویی مرتب و روزمره.',tags:['مات','روزمره','محو'],image:'assets/images/portfolio-14.svg'},
-  {id:15,title:'قوس سلطنتی',category:'fluffy',categoryFa:'کرکی',desc:'قوس کمی بلندتر با تارهای رو به بالا برای نگاه بازتر و استایل مجلسی‌تر.',tags:['قوس بلند','مجلسی','کشیده'],image:'assets/images/portfolio-15.svg'},
-  {id:16,title:'ابروی روشن',category:'natural',categoryFa:'نچرال',desc:'خطوط روشن و نازک برای موی ابرو و چهره‌هایی با کنتراست پایین.',tags:['روشن','نازک','نرم'],image:'assets/images/portfolio-16.svg'},
-  {id:17,title:'هیبرید لوکس',category:'combo',categoryFa:'ترکیبی',desc:'تکنیک ترکیبی برای ظاهر پرتر، اما با شروع طبیعی و تارهای تفکیک‌شده.',tags:['لوکس','هیبرید','پرتر'],image:'assets/images/portfolio-17.svg'},
-  {id:18,title:'پودری ابریشمی',category:'powder',categoryFa:'پودری',desc:'گرادیان بسیار نرم از ابتدای ابرو تا دم؛ مناسب استایل مرتب و آرایش‌دوست.',tags:['گرادیان','ابریشمی','تمیز'],image:'assets/images/portfolio-18.svg'},
-  {id:19,title:'کرکی ژورنالی',category:'fluffy',categoryFa:'کرکی',desc:'تارهای برجسته و کمی نامنظم برای حس ادیتوریال و مدرن، بدون فرم خشک.',tags:['ژورنالی','مدرن','خوش‌تراکم'],image:'assets/images/portfolio-19.svg'},
-  {id:20,title:'امضای Songul',category:'combo',categoryFa:'ترکیبی',desc:'مدل امضای استودیو: شروع تار به تار، بدنه متعادل و سایه بسیار سبک در دم.',tags:['امضایی','تعادل','تخصصی'],image:'assets/images/portfolio-20.svg'}
-];
 
-const grid = document.getElementById('portfolioGrid');
-const modal = document.getElementById('portfolioModal');
-const modalImage = document.getElementById('modalImage');
-const modalTitle = document.getElementById('modalTitle');
-const modalDescription = document.getElementById('modalDescription');
-const modalCategory = document.getElementById('modalCategory');
-const modalTags = document.getElementById('modalTags');
-const modalBooking = document.getElementById('modalBooking');
-const closeModal = () => modal?.open && modal.close();
-
-function renderPortfolio(filter='all'){
-  const visible = filter === 'all' ? portfolio : portfolio.filter(item => item.category === filter);
-  grid.innerHTML = visible.map(item => `
-    <article class="portfolio-card" data-id="${item.id}" tabindex="0" aria-label="نمایش ${item.title}">
-      <img class="portfolio-image" src="${item.image}" alt="نمونه سبک ${item.title}" loading="lazy">
-      <div class="portfolio-info"><div class="portfolio-top"><h3>${item.title}</h3><span class="chip">${item.categoryFa}</span></div><p>${item.desc}</p></div>
-    </article>`).join('');
+(()=>{
+'use strict';
+const items=[{"id": "01", "title": "نچرال امضایی", "style": "natural", "label": "نچرال", "description": "تارهای ظریف با شروع بسیار نرم و پایان تمیز؛ مناسب برای پر کردن بخش‌های خالی بدون حس سنگینی.", "image": "assets/images/portfolio-01.webp"}, {"id": "02", "title": "فِیثر لایت", "style": "fluffy", "label": "کرکی", "description": "تارهای رو به بالا با فضای منفی کنترل‌شده؛ ظاهر مرتب اما سبک و هوا‌دار.", "image": "assets/images/portfolio-02.webp"}, {"id": "03", "title": "کُمبو بالانس", "style": "combo", "label": "ترکیبی", "description": "ترکیب هاشور مویی و سایه‌ی خیلی نرم برای وقتی که هم بافت مو را می‌خواهی هم عمق ملایم.", "image": "assets/images/portfolio-03.webp"}, {"id": "04", "title": "سافت پودری", "style": "powder", "label": "پودری", "description": "سایه‌ی محو با تمرکز بیشتر در دم ابرو؛ مناسب قاب مرتب‌تر و میکاپ‌پسند.", "image": "assets/images/portfolio-04.webp"}, {"id": "05", "title": "نچرال بِلِند", "style": "natural", "label": "نچرال", "description": "فرم طبیعی و کشیده با گوشه‌ی داخلی روشن و انتهای کنترل‌شده.", "image": "assets/images/portfolio-05.webp"}, {"id": "06", "title": "براشد فِیثر", "style": "fluffy", "label": "کرکی", "description": "چیدمان عمودی تارها با حس براش‌خورده و لطافت بیشتر در تاج.", "image": "assets/images/portfolio-06.webp"}, {"id": "07", "title": "کُمبو سافت", "style": "combo", "label": "ترکیبی", "description": "هاشورهای سبک در جلو و سایه‌ی تدریجی در نیمه‌ی بیرونی برای تعادل قاب صورت.", "image": "assets/images/portfolio-07.webp"}, {"id": "08", "title": "پودر مخملی", "style": "powder", "label": "پودری", "description": "بافت پودری مخملی با کنتراست کم و لبه‌های نرم برای نتیجه‌ی ظریف.", "image": "assets/images/portfolio-08.webp"}, {"id": "09", "title": "هیرلاین نچرال", "style": "natural", "label": "نچرال", "description": "تأکید روی تارهای تکی و جهت رشد طبیعی برای ظاهر بسیار مینیمال.", "image": "assets/images/portfolio-09.webp"}, {"id": "10", "title": "فِیثر کلین", "style": "fluffy", "label": "کرکی", "description": "تارهای تفکیک‌شده و مرتب، مناسب سبک‌های مدرن و ابروهای رو به بالا.", "image": "assets/images/portfolio-10.webp"}, {"id": "11", "title": "کُمبو رز", "style": "combo", "label": "ترکیبی", "description": "بافت مو در بخش داخلی و سایه‌ی رقیق در دم برای قاب نرم و زنانه.", "image": "assets/images/portfolio-11.webp"}, {"id": "12", "title": "پودر گلد", "style": "powder", "label": "پودری", "description": "سایه‌ی گرم و یکنواخت با تمرکز ظریف روی قوس و دم.", "image": "assets/images/portfolio-12.webp"}, {"id": "13", "title": "آرچ نچرال", "style": "natural", "label": "نچرال", "description": "قوس کنترل‌شده و تاج آرام برای حفظ حالت طبیعی چهره.", "image": "assets/images/portfolio-13.webp"}, {"id": "14", "title": "فِیثر اِیر", "style": "fluffy", "label": "کرکی", "description": "سبک‌ترین اجرای کرکی در این مجموعه؛ حجم بصری بالا بدون لبه‌ی سنگین.", "image": "assets/images/portfolio-14.webp"}, {"id": "15", "title": "نانو کُمبو", "style": "combo", "label": "ترکیبی", "description": "جزئیات مویی دقیق در جلو و پخش سایه در دم برای نتیجه‌ی متعادل.", "image": "assets/images/portfolio-15.webp"}, {"id": "16", "title": "سافت میست", "style": "powder", "label": "پودری", "description": "هاله‌ی سایه‌ای نرم و یکپارچه با تمرکز کمتر در تاج.", "image": "assets/images/portfolio-16.webp"}, {"id": "17", "title": "امضای سونگل", "style": "natural", "label": "نچرال", "description": "فرم شخصی‌سازی‌شده برای چهره‌هایی که ظاهر طبیعی و لوکس را هم‌زمان می‌خواهند.", "image": "assets/images/portfolio-17.webp"}, {"id": "18", "title": "گلاس کُمبو", "style": "combo", "label": "ترکیبی", "description": "قاب تمیز با جزئیات تار و پایان ساتنی و بسیار نرم.", "image": "assets/images/portfolio-18.webp"}, {"id": "19", "title": "فِیثر برونت", "style": "fluffy", "label": "کرکی", "description": "کرکی، بلند و سبک؛ مناسب کسانی که ابروی پرحضور اما غیرمصنوعی می‌خواهند.", "image": "assets/images/portfolio-19.webp"}, {"id": "20", "title": "مینیمال پودری", "style": "powder", "label": "پودری", "description": "سایه‌ی کنترل‌شده برای کسانی که نتیجه‌ی مرتب و کم‌کنتراست را ترجیح می‌دهند.", "image": "assets/images/portfolio-20.webp"}];
+const gallery=document.getElementById('gallery');
+const savedKey='songul-premium-favs';
+const bookingKey='songul-premium-booking';
+let saved=new Set(JSON.parse(localStorage.getItem(savedKey)||'[]'));
+let current=null;
+const faDigits=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+function syncSavedCount(){document.getElementById('savedCount').textContent=faDigits(saved.size)}
+function styleMatch(item,f){return f==='all'||f==='saved'?(f==='all'||saved.has(item.id)):item.style===f}
+function render(){
+ const f=document.querySelector('.filters button.active')?.dataset.filter||'all';
+ const q=(document.getElementById('search').value||'').trim().toLowerCase(); gallery.innerHTML='';
+ const out=items.filter(x=>styleMatch(x,f)&&(!q||(`${x.title} ${x.label} ${x.description}`).toLowerCase().includes(q)));
+ if(!out.length){gallery.innerHTML='<div class="empty">مدلی با این جست‌وجو پیدا نشد. فیلتر یا عبارت دیگری را امتحان کن.</div>'; syncSavedCount(); return}
+ out.forEach(item=>{
+  const card=document.createElement('article'); card.className='work-card reveal';
+  card.innerHTML=`<button class="heart ${saved.has(item.id)?'saved':''}" aria-label="ذخیره مدل" type="button"><svg viewBox="0 0 24 24"><path d="M20.8 8.7c0 5.5-8.8 11-8.8 11s-8.8-5.5-8.8-11A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"/></svg></button><button class="work-open" type="button"><span class="work-image"><img src="${item.image}" alt="${item.title} — تصویر مرجع" loading="lazy"><span class="work-number">${item.id}</span></span><span class="work-copy"><span class="work-meta">${item.label} · مرجع تصویری</span><strong>${item.title}</strong><span class="work-arrow">↙</span></span></button>`;
+  gallery.appendChild(card);
+  card.querySelector('.work-open').addEventListener('click',()=>openModal(item));
+  card.querySelector('.heart').addEventListener('click',e=>{e.stopPropagation();toggleSaved(item.id)});
+ });
+ observe(); syncSavedCount();
 }
-function openPortfolio(id){
-  const item = portfolio.find(x => x.id === Number(id));
-  if(!item || !modal) return;
-  modalImage.src = item.image; modalImage.alt = `نمونه سبک ${item.title}`;
-  modalTitle.textContent = item.title; modalDescription.textContent = item.desc; modalCategory.textContent = `${item.categoryFa} · LOOK ${String(item.id).padStart(2,'0')}`;
-  modalTags.innerHTML = item.tags.map(t=>`<span>${t}</span>`).join('');
-  modalBooking.dataset.style = item.title;
-  modal.showModal();
-}
-grid.addEventListener('click',e=>{const card=e.target.closest('.portfolio-card'); if(card) openPortfolio(card.dataset.id);});
-grid.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ') && e.target.classList.contains('portfolio-card')){e.preventDefault();openPortfolio(e.target.dataset.id);}});
-document.getElementById('modalClose')?.addEventListener('click',closeModal);
-modalBooking?.addEventListener('click',e=>{e.preventDefault(); const style=modalBooking.dataset.style; closeModal(); document.querySelector('#booking select[name="style"]').value = style; document.querySelector('#booking').scrollIntoView({behavior:'smooth'});});
-modal?.addEventListener('click',e=>{if(e.target===modal) closeModal();});
-
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('is-active')); btn.classList.add('is-active'); renderPortfolio(btn.dataset.filter);
-}));
-
-const bookingForm = document.getElementById('bookingForm');
-const success = document.getElementById('bookingSuccess');
-const successText = document.getElementById('successText');
-bookingForm.addEventListener('submit', e=>{
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(bookingForm).entries());
-  if(!data.name.trim() || !data.phone.trim()){
-    bookingForm.querySelector('[name="name"]').reportValidity();
-    if(!data.name.trim()) bookingForm.querySelector('[name="name"]').focus(); else bookingForm.querySelector('[name="phone"]').focus();
-    return;
-  }
-  const request = { ...data, id: Date.now(), createdAt: new Date().toISOString() };
-  const existing = JSON.parse(localStorage.getItem('songul_booking_requests') || '[]');
-  existing.unshift(request); localStorage.setItem('songul_booking_requests', JSON.stringify(existing.slice(0,10)));
-  successText.textContent = `درخواست ${data.name} برای «${data.style}» روی همین دستگاه ذخیره شد. برای نهایی‌کردن زمان، می‌توانی بعد از این مرحله از بخش اینستاگرام پیام بدهی.`;
-  success.showModal(); bookingForm.reset();
-});
-document.getElementById('successClose').addEventListener('click',()=>success.close());
-success.addEventListener('click',e=>{if(e.target===success) success.close();});
-
-// Smooth anchor links also close open dialogs.
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{ if(modal?.open) closeModal(); }));
-renderPortfolio();
+function toggleSaved(id){saved.has(id)?saved.delete(id):saved.add(id);localStorage.setItem(savedKey,JSON.stringify([...saved]));render()}
+function openModal(item){current=item;document.getElementById('modalImg').src=item.image;document.getElementById('modalImg').alt=item.title;document.getElementById('modalMeta').textContent=`${item.id} · ${item.label} · مرجع تصویری`;document.getElementById('modalTitle').textContent=item.title;document.getElementById('modalDesc').textContent=item.description;document.getElementById('modalFav').textContent=saved.has(item.id)?'حذف از ذخیره‌ها':'ذخیره مدل';document.getElementById('modal').showModal();document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modal').close();document.body.style.overflow=''}
+document.getElementById('modalClose').addEventListener('click',closeModal);document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});document.getElementById('modalFav').addEventListener('click',()=>{if(current){toggleSaved(current.id);document.getElementById('modalFav').textContent=saved.has(current.id)?'حذف از ذخیره‌ها':'ذخیره مدل'}});document.getElementById('modalBook').addEventListener('click',()=>{if(current){document.getElementById('style').value=current.label;document.getElementById('message').value=`مدل انتخابی: ${current.title}`;closeModal();document.getElementById('booking').scrollIntoView({behavior:'smooth'})}});
+document.querySelectorAll('#filters button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render()}));document.getElementById('search').addEventListener('input',render);
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}}),{threshold:.08});function observe(){document.querySelectorAll('.reveal:not(.in)').forEach(x=>observer.observe(x))}
+const petalLayer=document.getElementById('petals');for(let i=0;i<20;i++){const p=document.createElement('span');p.className='petal';p.style.left=`${Math.random()*100}vw`;p.style.animationDuration=`${10+Math.random()*9}s`;p.style.animationDelay=`${-Math.random()*18}s`;p.style.transform=`rotate(${Math.random()*160}deg)`;petalLayer.appendChild(p)}
+const menuBtn=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu');menuBtn.addEventListener('click',()=>{const on=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',String(!on));menu.hidden=on});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.hidden=true;menuBtn.setAttribute('aria-expanded','false')}));
+document.getElementById('date').min=new Date().toISOString().slice(0,10);
+const form=document.getElementById('bookingForm'),status=document.getElementById('status');function getBooking(){const fd=new FormData(form);return{name:String(fd.get('name')||'').trim(),phone:String(fd.get('phone')||'').trim(),style:String(fd.get('style')||'').trim(),date:String(fd.get('date')||'').trim(),message:String(fd.get('message')||'').trim(),savedAt:new Date().toISOString()}}function fmt(b){return `درخواست رزرو microblading.songul\n\nنام: ${b.name}\nشماره تماس: ${b.phone}\nاستایل: ${b.style||'تعیین نشده'}\nتاریخ پیشنهادی: ${b.date||'تعیین نشده'}\nتوضیحات: ${b.message||'ندارد'}`}
+form.addEventListener('submit',e=>{e.preventDefault();const b=getBooking();if(b.name.length<2||b.phone.length<7){status.textContent='لطفاً نام و شماره تماس را کامل وارد کن.';return}localStorage.setItem(bookingKey,JSON.stringify(b));status.textContent='درخواست روی همین دستگاه ذخیره شد. از دکمه اشتراک‌گذاری می‌توانی خلاصه را ارسال یا کپی کنی.'});
+document.getElementById('shareBtn').addEventListener('click',async()=>{const raw=localStorage.getItem(bookingKey);if(!raw){status.textContent='ابتدا فرم را ثبت کن.';return}const text=fmt(JSON.parse(raw));if(navigator.share){try{await navigator.share({title:'درخواست رزرو microblading.songul',text});status.textContent='خلاصه درخواست به اشتراک گذاشته شد.';return}catch{}}try{await navigator.clipboard.writeText(text);status.textContent='خلاصه درخواست کپی شد.'}catch{status.textContent='مرورگر امکان Share یا Clipboard را در دسترس نگذاشته است.'}});
+render();observe();
+})();
