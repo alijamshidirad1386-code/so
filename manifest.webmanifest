@@ -1,11 +1,11 @@
 {
-  "name":"microblading.songul",
-  "short_name":"Songul Brows",
+  "name":"سون گول حامد | میکروبلیدینگ",
+  "short_name":"سون گول",
   "lang":"fa-IR",
   "dir":"rtl",
   "start_url":"./",
   "display":"standalone",
-  "background_color":"#090807",
-  "theme_color":"#0b0909",
-  "icons":[{"src":"assets/images/songul-logo.png","sizes":"660x660","type":"image/png"}]
+  "background_color":"#08261e",
+  "theme_color":"#08261e",
+  "description":"استودیو تخصصی میکروبلیدینگ و طراحی طبیعی ابرو"
 }
