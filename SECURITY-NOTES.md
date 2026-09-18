@@ -1,17 +1,7 @@
-# یادداشت امنیتی انتشار
+# Security / deployment notes
 
-این نسخه یک سایت استاتیک self-contained است. در کد منتشرشده اسکریپت خارجی، iframe، فرم ارسال اطلاعات به سرور ناشناس، تبلیغات، آنالیتیکس یا دانلود خودکار وجود ندارد و درخواست رزرو فقط در localStorage همان مرورگر ذخیره می‌شود.
-
-## درباره هشدار `Dangerous site` در Chrome
-
-هشدار Safe Browsing را نمی‌توان فقط با تغییر HTML/CSS/JS به‌صورت قطعی حذف کرد. اگر دامنه قبلاً توسط Google به‌عنوان phishing، hacked content، malware یا deceptive content علامت‌گذاری شده باشد، باید وضعیت دامنه در Google Search Console و Safe Browsing بررسی و پس از پاکسازی درخواست review ثبت شود.
-
-قبل از انتشار:
-
-1. فایل‌های قدیمی و مشکوک روی هاست/Repository را حذف کن و فقط فایل‌های نسخه‌ی تمیز را منتشر کن.
-2. در Google Search Console بخش **Security Issues** و **Manual Actions** را بررسی کن.
-3. اگر Security Issue باقی مانده بود، نمونه URLهای معرفی‌شده را کامل بررسی و تمام موارد را رفع کن.
-4. بعد از اطمینان از پاک بودن دامنه، **Request Review** را ارسال کن. ممکن است حذف هشدار چند روز زمان ببرد.
-5. مطمئن شو HTTPS فعال است و نسخه‌ی HTTPS دامنه به همین فایل‌های جدید سرو می‌شود.
-
-این بسته به‌تنهایی نمی‌تواند reputation یا وضعیت Safe Browsing یک دامنه را تغییر دهد؛ این بخش در سطح دامنه/هاست و سامانه‌ی Google بررسی می‌شود.
+- The redesign removes decorative rose assets and does not load third-party scripts, CDNs, fonts, iframes, trackers, or remote images.
+- All JavaScript and images referenced by the pages are local to this package.
+- A restrictive Content-Security-Policy is included in the page `<head>` and a `_headers` file is provided for hosts that support that convention.
+- The booking page does not POST visitor data to a remote endpoint. It creates a local request summary and optionally uses the browser's clipboard/share APIs.
+- A Chrome “Dangerous site” interstitial is controlled by Safe Browsing / the hosting domain's security reputation and cannot be cleared by HTML/CSS alone. After deployment, inspect the domain in Google Search Console > Security Issues and request a review after confirming the domain and its hosting environment are clean.

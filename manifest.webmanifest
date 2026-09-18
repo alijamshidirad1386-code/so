@@ -1,11 +1,10 @@
 {
-  "name":"سون گول حامد | میکروبلیدینگ",
-  "short_name":"سون گول",
-  "lang":"fa-IR",
-  "dir":"rtl",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#08261e",
-  "theme_color":"#08261e",
-  "description":"استودیو تخصصی میکروبلیدینگ و طراحی طبیعی ابرو"
+  "name": "سون گول حامد | استودیو تخصصی ابرو",
+  "short_name": "سون گول",
+  "lang": "fa",
+  "dir": "rtl",
+  "display": "standalone",
+  "theme_color": "#1b4c3f",
+  "background_color": "#f5f0e6",
+  "start_url": "index.html"
 }

@@ -2,177 +2,116 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#4f8b6a">
-<meta name="description" content="سون گول حامد — استودیو تخصصی طراحی و میکروبلیدینگ ابرو با تمرکز بر نتیجه طبیعی، ظریف و لوکس.">
-<meta name="robots" content="index,follow">
-<title>سون گول حامد | Microblading Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'">
+<meta name="theme-color" content="#1b4c3f">
+<meta name="description" content="سون گول حامد؛ استودیو تخصصی طراحی و میکروبلیدینگ ابرو با رویکرد طبیعی، ظریف و لوکس.">
+<title>سون گول حامد | Brow Atelier</title>
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="assets/images/songul-logo.png" type="image/png">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/js/data.js" defer></script>
+<script src="assets/app.js" defer></script>
 </head>
-<body>
-<div class="page-glow" aria-hidden="true"></div>
-<div class="petals" id="petals" aria-hidden="true"></div>
-
-<header class="site-header" id="top">
-  <a class="brand" href="#top" aria-label="سون گول حامد">
-    <span class="brand-logo"><img src="assets/images/songul-logo.png" alt="سون گول حامد"></span>
-    <span class="brand-copy"><b>SON GOOL HAMED</b><small>MICROBLADING STUDIO</small></span>
-  </a>
-  <nav class="desktop-nav" aria-label="ناوبری اصلی">
-    <a href="#portfolio">نمونه‌کارها</a><a href="#before-after">قبل و بعد</a><a href="#method">میکروبلیدینگ</a><a href="#experience">تجربه</a><a href="#booking">رزرو وقت</a>
-  </nav>
-  <a class="header-cta" href="#booking">رزرو وقت <span>↙</span></a>
-  <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو" aria-expanded="false"><i></i><i></i><i></i></button>
+<body data-page="home">
+<header class="topbar" id="top">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand" aria-label="سون گول حامد">
+      <span class="brand-mark"><img src="assets/images/songul-logo.png" alt="سون گول حامد"></span>
+      <span class="brand-word"><b>SON GOOL</b><small>BROW ATELIER</small></span>
+    </a>
+    <nav class="main-nav" aria-label="ناوبری اصلی">
+      <a class="active" href="index.html">خانه</a>
+      <a href="#portfolio">نمونه‌کار</a>
+      <a href="#before-after">قبل و بعد</a>
+      <a href="services.html">خدمات</a>
+      <a href="care.html">مراقبت</a>
+    </nav>
+    <a class="nav-cta" href="booking.html">رزرو وقت <span>↙</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="باز کردن منو"><i></i><i></i><i></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="index.html">خانه</a><a href="#portfolio">نمونه‌کار</a><a href="#before-after">قبل و بعد</a><a href="services.html">خدمات</a><a href="care.html">مراقبت</a><a class="menu-book" href="booking.html">رزرو وقت</a>
+  </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu" hidden>
-  <a href="#portfolio">نمونه‌کارها</a><a href="#before-after">قبل و بعد</a><a href="#method">میکروبلیدینگ</a><a href="#experience">تجربه</a><a href="#booking">رزرو وقت</a>
-</div>
-
 <main>
-<section class="hero" aria-label="معرفی سون گول">
-  <img class="rose rose-hero-one" src="assets/images/rose-cluster.webp" alt="" aria-hidden="true">
-  <img class="rose rose-hero-two" src="assets/images/rose-cluster.webp" alt="" aria-hidden="true">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="hero-eyebrow"><span>SON GOOL HAMED</span><i></i><b>MICROBLADING STUDIO</b></div>
-      <div class="hero-logo-wrap"><img src="assets/images/songul-logo.png" alt="لوگوی سفید سون گول حامد"><div><b>SON GOOL</b><small>Signature Brow Artist</small></div></div>
-      <span class="gold-label">زیبایی طبیعی، با امضای شخصی تو</span>
-      <h1>ابروهایی که<br><em>چهره‌ات را کامل می‌کنند.</em></h1>
-      <p class="hero-lead">در طراحی حرفه‌ای ابرو، قرار نیست نتیجه مصنوعی یا یک‌شکل باشد. فرم صورت، تراکم تارها، جهت رشد و سبک دلخواهت بررسی می‌شود تا طراحی نهایی ظریف، تمیز و کاملاً هماهنگ با چهره‌ات باشد.</p>
-      <div class="hero-actions"><a class="gold-btn" href="#before-after">دیدن قبل و بعد <span>↙</span></a><a class="light-btn" href="#portfolio">مشاهده نمونه‌کارها</a></div>
-      <div class="hero-notes"><span><b>۱:۱</b> طراحی اختصاصی</span><span><b>۲۰+</b> مدل مرجع</span><span><b>۰۴</b> سبک اصلی</span></div>
+<section class="hero-new section-pad">
+  <div class="hero-orbit hero-orbit-a"></div><div class="hero-orbit hero-orbit-b"></div>
+  <div class="wrap hero-layout">
+    <div class="hero-copy-new">
+      <div class="micro-kicker"><span></span> SON GOOL HAMED · BROW ATELIER</div>
+      <h1>ابرو، وقتی لوکس می‌شود که <em>طبیعی</em> بماند.</h1>
+      <p class="hero-text">سون گول حامد با تمرکز بر فرم صورت، جهت رشد تارها و جزئیات ظریف، ابروهایی را طراحی می‌کند که بخشی از چهره باشند؛ نه چیزی جدا از آن.</p>
+      <div class="hero-actions-new"><a class="btn-gold" href="booking.html">درخواست مشاوره <span>↙</span></a><a class="btn-line" href="#before-after">تفاوت را ببین</a></div>
+      <div class="hero-proof"><div><b>۱:۱</b><span>طراحی شخصی</span></div><div><b>۲۰+</b><span>مدل مرجع</span></div><div><b>۰۴</b><span>استایل اصلی</span></div></div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-frame">
-        <div class="hero-image-wrap"><img src="assets/images/portfolio-12.webp" alt="نمونه نزدیک ابروهای طراحی‌شده و طبیعی" fetchpriority="high"></div>
-        <div class="hero-gold-seal"><span>SG</span><small>signature<br>brows</small></div>
-        <div class="hero-caption"><b>طراحی طبیعی</b><span>فرم اختصاصی · اجرای ظریف</span></div>
+    <div class="hero-art">
+      <div class="hero-image-card">
+        <div class="hero-image-inner"><img src="assets/images/hero-brow.webp" alt="نمونه نزدیک طراحی ابرو" fetchpriority="high"></div>
+        <div class="hero-badge"><span class="badge-monogram">SG</span><div><b>Signature Brow</b><small>Microblading / Natural finish</small></div></div>
       </div>
-      <div class="hero-stamp">LUXURY<br><span>MICROBLADING</span></div>
+      <div class="hero-side-note"><span>01</span><b>خطوط تمیز</b><small>جزئیات تا نزدیک‌ترین فاصله</small></div>
     </div>
   </div>
 </section>
 
-<section class="promise-strip" aria-label="ویژگی های خدمات">
-  <div><span class="strip-icon">✦</span><b>طراحی متناسب با چهره</b><small>هر فرم قبل از اجرا بررسی می‌شود.</small></div>
-  <div><span class="strip-icon">❖</span><b>ظرافت تار به تار</b><small>تمرکز روی ظاهر طبیعی و تمیز.</small></div>
-  <div><span class="strip-icon">♡</span><b>مشاوره شخصی</b><small>انتخاب سبک بر اساس نیاز تو.</small></div>
-  <div><span class="strip-icon">✿</span><b>مراقبت بعد از کار</b><small>راهنمای واضح برای روند ترمیم.</small></div>
+<section class="luxury-strip"><div class="wrap luxury-grid"><div><span class="lux-icon">✦</span><b>مشاوره اختصاصی</b><small>قبل از انتخاب فرم</small></div><div><span class="lux-icon">◈</span><b>طراحی چهره‌محور</b><small>بر اساس ساختار ابرو</small></div><div><span class="lux-icon">⌁</span><b>اجرای ظریف</b><small>تمرکز روی ظاهر طبیعی</small></div><div><span class="lux-icon">✓</span><b>راهنمای مراقبت</b><small>بعد از انجام خدمات</small></div></div></section>
+
+<section class="section-pad story-new" id="about">
+  <div class="wrap split-layout">
+    <div class="editorial-photo"><img src="assets/images/detail-brow.webp" loading="lazy" alt="نمای نزدیک از جزئیات ابرو"><span class="photo-tag">SON GOOL METHOD</span></div>
+    <div class="copy-column"><div class="eyebrow">BROW ARCHITECTURE</div><h2>فرم خوب، قبل از اجرا <em>طراحی می‌شود.</em></h2><p>میکروبلیدینگ فقط اضافه‌کردن تار نیست. قبل از اجرا، قاب ابرو، زاویه صورت، تراکم تارها، جهت رشد، شدت رنگ و سبک مطلوب بررسی می‌شود تا نتیجه با چهره هماهنگ بماند.</p><div class="numbered-list"><div><b>01</b><span><strong>تحلیل فرم</strong><small>خط شروع، قوس و پایان ابرو مشخص می‌شود.</small></span></div><div><b>02</b><span><strong>طراحی اولیه</strong><small>قبل از اجرا، فرم پیشنهادی قابل بررسی است.</small></span></div><div><b>03</b><span><strong>اجرای جزئیات</strong><small>شدت و جهت خطوط بر اساس بافت طبیعی تنظیم می‌شود.</small></span></div></div><a class="text-link" href="services.html">جزئیات روش و خدمات ↙</a></div>
+  </div>
 </section>
 
-<section class="story section" id="method">
-  <img class="rose rose-section-left" src="assets/images/rose-cluster.webp" alt="" aria-hidden="true">
-  <div class="container story-grid">
-    <div class="story-card image-card">
-      <img src="assets/images/detail-brow.webp" alt="جزئیات ابرو و تکنیک ظریف" loading="lazy">
-      <div class="image-badge"><span>01</span><b>SON GOOL METHOD</b></div>
-    </div>
-    <div class="story-copy">
-      <span class="eyebrow">MICROBLADING / BROW ARCHITECTURE</span>
-      <h2>میکروبلیدینگ فقط<br><em>پر کردن ابرو نیست.</em></h2>
-      <p>میکروبلیدینگ روشی ظریف برای ایجاد ظاهر تارهای طبیعی در ناحیه ابرو است. نتیجه خوب از انتخاب مدل شروع نمی‌شود؛ از شناخت ساختار چهره، فرم طبیعی ابرو و برنامه‌ریزی دقیق برای طراحی شروع می‌شود.</p>
-      <div class="story-points">
-        <div><strong>01</strong><span><b>شناخت فرم صورت</b><small>قوس، طول، فاصله و قاب کلی بررسی می‌شود.</small></span></div>
-        <div><strong>02</strong><span><b>بررسی تراکم و جهت تارها</b><small>تا طرح نهایی با رشد طبیعی ابرو هماهنگ باشد.</small></span></div>
-        <div><strong>03</strong><span><b>انتخاب تکنیک و شدت</b><small>نچرال، کرکی، ترکیبی یا پودری براساس نیاز انتخاب می‌شود.</small></span></div>
+<section class="section-pad compare-section" id="before-after">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">BEFORE / AFTER</div><h2>تفاوت را با <em>حرکت دستت</em> ببین.</h2></div><p>اسلایدر را بکش. تصویر سمت چپ حالت طبیعی و تصویر سمت راست نمونه طراحی‌شده است. تصاویر مرجع مستقل هستند.</p></div>
+    <div class="compare-layout">
+      <div class="compare-card">
+        <div class="compare-view" id="compareView" style="--split:50%">
+          <img class="compare-after" src="assets/images/after-microblading.webp" alt="نمونه طراحی‌شده پس از میکروبلیدینگ" loading="lazy">
+          <div class="compare-before"><img src="assets/images/before-natural.webp" alt="ابروی طبیعی پیش از طراحی" loading="lazy"></div>
+          <span class="compare-pill before">قبل · طبیعی</span><span class="compare-pill after">بعد · طراحی‌شده</span>
+          <input id="compareRange" type="range" min="0" max="100" value="50" aria-label="مقایسه قبل و بعد">
+          <div class="compare-divider"><span>↔</span></div>
+        </div>
+        <div class="compare-foot"><span>لمس و بکش</span><span>۰% ← ۱۰۰%</span></div>
       </div>
+      <div class="compare-copy"><div class="mini-number">02</div><div class="eyebrow">SIGNATURE DETAIL</div><h3>طبیعی از نزدیک، مرتب از دور.</h3><p>تمرکز روی ظاهر تارها، قاب ابرو و هماهنگی با چهره است؛ نه ساختن یک فرم یکسان برای همه.</p><div class="metric-list"><div><b>تقارن</b><span>هماهنگ‌سازی قاب دو ابرو</span></div><div><b>بافت</b><span>تنظیم جهت و فاصله تارها</span></div><div><b>شدت</b><span>کنترل رنگ و سایه برای نتیجه نرم</span></div></div><small>نکته: این دو تصویر برای نمایش تفاوت استایل استفاده شده‌اند و مربوط به یک مراجعه‌کننده واحد نیستند.</small></div>
     </div>
   </div>
 </section>
 
-<section class="before-after-section section" id="before-after">
-  <img class="rose rose-section-right" src="assets/images/rose-cluster.webp" alt="" aria-hidden="true">
-  <div class="container">
-    <div class="section-heading centered">
-      <span class="eyebrow">BEFORE / AFTER</span>
-      <h2>تفاوت را خودت<br><em>با اسلایدر ببین.</em></h2>
-      <p>دسته طلایی وسط تصویر را بکش تا بین حالت طبیعی و نمونه طراحی‌شده جابه‌جا شوی.</p>
-    </div>
-    <div class="comparison-shell">
-      <div class="comparison" id="comparison" style="--split:50%">
-        <img class="comparison-after" src="assets/images/after-microblading.webp" alt="بعد از میکروبلیدینگ، مدل مرجع" loading="lazy">
-        <div class="comparison-before"><img src="assets/images/before-natural.webp" alt="حالت طبیعی ابرو، مدل مرجع" loading="lazy"></div>
-        <span class="compare-label label-before">ابروی طبیعی</span>
-        <span class="compare-label label-after">نمونه پس از میکروبلیدینگ</span>
-        <input id="comparisonRange" class="comparison-range" type="range" min="0" max="100" value="50" aria-label="میزان نمایش قبل و بعد">
-        <div class="comparison-line" aria-hidden="true"><span class="comparison-handle">↔</span></div>
-      </div>
-      <aside class="comparison-info">
-        <span class="eyebrow">SIGNATURE DETAIL</span>
-        <h3>نتیجه باید از نزدیک هم طبیعی بماند.</h3>
-        <p>هدف طراحی این است که فرم کلی ابرو مرتب‌تر شود، بدون اینکه تارها سنگین و مصنوعی دیده شوند.</p>
-        <div class="info-list"><div><b>تقارن</b><span>هماهنگ‌سازی قاب دو ابرو</span></div><div><b>تارها</b><span>جهت‌گذاری متناسب با رشد</span></div><div><b>رنگ</b><span>انتخاب شدت بر اساس چهره و تناژ</span></div></div>
-        <small class="demo-note">این اسلاید از دو تصویر مرجع برای نمایش تفاوت استایل استفاده می‌کند و نمونه یک مراجعه‌کننده واحد نیست.</small>
-      </aside>
-    </div>
+<section class="section-pad styles-section" id="styles">
+  <div class="wrap"><div class="section-head"><div><div class="eyebrow">THE EDIT</div><h2>چهار سبک، <em>چهار شخصیت.</em></h2></div><p>برای هر فرم صورت، شدت رنگ و تراکم، زبان بصری متفاوتی وجود دارد.</p></div><div class="style-grid">
+    <article class="style-card"><span>01</span><div class="style-card-mark">N</div><h3>نچرال</h3><p>سبک‌ترین حالت برای وقتی که می‌خواهی ابرو فقط مرتب‌تر و کامل‌تر به نظر برسد.</p><a href="services.html#natural">جزئیات ↙</a></article>
+    <article class="style-card featured"><span>02</span><div class="style-card-mark">F</div><h3>کرکی</h3><p>تارهای رو به بالا و بافت سبک برای حس مدرن‌تر و بازتر.</p><a href="services.html#fluffy">جزئیات ↙</a></article>
+    <article class="style-card"><span>03</span><div class="style-card-mark">C</div><h3>ترکیبی</h3><p>ترکیب تار و سایه برای قاب واضح‌تر با حس هنوز طبیعی.</p><a href="services.html#combo">جزئیات ↙</a></article>
+    <article class="style-card"><span>04</span><div class="style-card-mark">P</div><h3>پودری</h3><p>هاله نرم و مخملی برای کسانی که ابروی مشخص‌تر را دوست دارند.</p><a href="services.html#powder">جزئیات ↙</a></article>
+  </div></div>
+</section>
+
+<section class="section-pad portfolio-new" id="portfolio">
+  <div class="wrap"><div class="section-head"><div><div class="eyebrow">PORTFOLIO</div><h2>نمونه‌کارهایی برای <em>الهام</em>.</h2></div><div class="portfolio-actions"><div class="chips" id="filters"><button class="active" data-filter="all">همه</button><button data-filter="natural">نچرال</button><button data-filter="fluffy">کرکی</button><button data-filter="combo">ترکیبی</button><button data-filter="powder">پودری</button></div><label class="search-box"><span>⌕</span><input id="portfolioSearch" type="search" placeholder="جستجو در نمونه‌کارها…" aria-label="جستجو در نمونه‌کارها"></label></div></div><div class="portfolio-grid" id="portfolioGrid"></div></div>
+</section>
+
+<section class="section-pad finder-section">
+  <div class="wrap finder-card">
+    <div class="finder-intro"><div class="eyebrow">STYLE FINDER</div><h2>سبک مناسب خودت را <em>پیدا کن.</em></h2><p>سه سؤال کوتاه جواب بده تا بر اساس انتخاب‌هایت یک پیشنهاد بصری دریافت کنی.</p></div>
+    <div class="finder-panel" id="finderPanel"><div class="finder-step" data-step="1"><b>۱ / ۳</b><h3>ابرو را بیشتر چطور می‌پسندی؟</h3><div class="finder-options"><button data-value="natural">خیلی طبیعی</button><button data-value="fluffy">کرکی و رو به بالا</button><button data-value="combo">مشخص اما نرم</button><button data-value="powder">مرتب و سایه‌ای</button></div></div><div class="finder-step" data-step="2" hidden><b>۲ / ۳</b><h3>چقدر قاب مشخص دوست داری؟</h3><div class="finder-options"><button data-score="1">خیلی کم</button><button data-score="2">متعادل</button><button data-score="3">نسبتاً زیاد</button></div></div><div class="finder-step" data-step="3" hidden><b>۳ / ۳</b><h3>حال‌وهوای نهایی؟</h3><div class="finder-options"><button data-mood="soft">نرم و مینیمال</button><button data-mood="modern">مدرن و مرتب</button><button data-mood="defined">مشخص و گلام</button></div></div><div class="finder-result" id="finderResult" hidden></div></div>
   </div>
 </section>
 
-<section class="services section" id="experience">
-  <div class="container">
-    <div class="section-heading split"><div><span class="eyebrow">THE SONGOOL EDIT</span><h2>چهار استایل<br><em>برای چهار حس متفاوت.</em></h2></div><p>سبک نهایی بعد از بررسی فرم صورت و تراکم طبیعی انتخاب می‌شود؛ این کارت‌ها فقط برای درک تفاوت زبان بصری هر تکنیک هستند.</p></div>
-    <div class="service-grid">
-      <article class="service-card"><span>01</span><h3>نچرال</h3><p>تارهای سبک و ظریف برای نتیجه‌ای که از دور مرتب و از نزدیک طبیعی بماند.</p><b>NATURAL</b></article>
-      <article class="service-card"><span>02</span><h3>کرکی</h3><p>بافت سبک و رو به بالا برای حس airy و ابرویی که بازتر و جوان‌تر به نظر می‌رسد.</p><b>FLUFFY</b></article>
-      <article class="service-card featured"><span>03</span><h3>ترکیبی</h3><p>تار + سایه برای عمق کنترل‌شده؛ مناسب وقتی قاب مشخص‌تر اما همچنان نرم می‌خواهی.</p><b>COMBO</b></article>
-      <article class="service-card"><span>04</span><h3>پودری</h3><p>هاله سایه‌ای نرم برای ظاهری تمیزتر و مشخص‌تر، با شدت قابل تنظیم.</p><b>POWDER</b></article>
-    </div>
-  </div>
-</section>
+<section class="section-pad timeline-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">THE EXPERIENCE</div><h2>تجربه، از <em>اولین مشاوره</em> شروع می‌شود.</h2></div><p>مراحل واضح، بدون شلوغی و با تمرکز روی نتیجه‌ای که برای خودت تعریف کرده‌ای.</p></div><div class="timeline"><div><span>01</span><b>مشاوره</b><p>شناخت فرم صورت، وضعیت ابرو و هدف تو.</p></div><div><span>02</span><b>طراحی</b><p>ترسیم فرم اولیه و انتخاب استایل و شدت.</p></div><div><span>03</span><b>اجرا</b><p>کار روی جزئیات و هماهنگی تارها.</p></div><div><span>04</span><b>مراقبت</b><p>راهنمای بعد از کار و پیگیری روند ترمیم.</p></div></div></div></section>
 
-<section class="portfolio section" id="portfolio">
-  <img class="rose rose-portfolio" src="assets/images/rose-cluster.webp" alt="" aria-hidden="true">
-  <div class="container">
-    <div class="section-heading split"><div><span class="eyebrow">PORTFOLIO / 20 REFERENCES</span><h2>فرم‌های مختلف،<br><em>یک امضای تمیز.</em></h2></div><p>نمونه‌ها برای نمایش فرم و سبک هستند. روی هر کارت بزن تا تصویر بزرگ‌تر و مشخصات مدل را ببینی.</p></div>
-    <div class="portfolio-toolbar"><div class="filters" id="filters"><button class="active" data-filter="all">همه</button><button data-filter="natural">نچرال</button><button data-filter="fluffy">کرکی</button><button data-filter="combo">ترکیبی</button><button data-filter="powder">پودری</button><button data-filter="saved">ذخیره‌شده <span id="savedCount">۰</span></button></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="جست‌وجوی مدل…" aria-label="جستجوی نمونه کار"></label></div>
-    <div class="gallery" id="gallery"></div>
-  </div>
-</section>
+<section class="cta-banner"><div class="wrap cta-inner"><div><div class="eyebrow">PRIVATE APPOINTMENT</div><h2>حالا نوبت <em>ابروهای توست.</em></h2><p>درخواستت را ثبت کن و اطلاعاتت را برای هماهنگی آماده داشته باش.</p></div><a class="btn-gold" href="booking.html">رزرو وقت ↙</a></div></section>
 
-<section class="booking section" id="booking">
-  <div class="container booking-grid">
-    <div class="booking-copy"><span class="eyebrow">PRIVATE BOOKING</span><h2>وقتت را<br><em>شروع کن.</em></h2><p>فرم رزرو کاملاً سمت کاربر اجرا می‌شود و برای نسخه نمایشی به سرویس خارجی احتیاج ندارد. بعد از ثبت، خلاصه درخواست روی دستگاهت آماده می‌شود تا راحت آن را کپی یا به پیام‌رسان منتقل کنی.</p><div class="booking-points"><span>✓ بدون سرویس خارجی</span><span>✓ بدون ردیاب</span><span>✓ ذخیره محلی درخواست</span></div></div>
-    <form class="booking-card" id="bookingForm">
-      <div class="field"><label for="name">نام و نام خانوادگی</label><input id="name" name="name" autocomplete="name" placeholder="مثلاً سارا احمدی" required></div>
-      <div class="field"><label for="phone">شماره تماس</label><input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="09xxxxxxxxx" required></div>
-      <div class="field"><label for="style">استایل مورد علاقه</label><select id="style" name="style"><option value="">انتخاب کن</option><option>نچرال</option><option>کرکی</option><option>ترکیبی</option><option>پودری</option><option>هنوز مطمئن نیستم</option></select></div>
-      <div class="field"><label for="date">تاریخ پیشنهادی</label><input id="date" type="date" name="date"></div>
-      <div class="field full"><label for="message">توضیحات</label><textarea id="message" name="message" rows="4" placeholder="اگر قبلاً ابرو کار شده یا سبک خاصی دوست داری، اینجا بنویس…"></textarea></div>
-      <div class="form-actions full"><button class="gold-btn" type="submit">ساخت درخواست رزرو <span>↙</span></button><button class="light-btn" type="button" id="shareBtn">کپی / اشتراک‌گذاری</button></div>
-      <p class="form-status full" id="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
-
-<section class="faq section">
-  <div class="container faq-grid">
-    <div><span class="eyebrow">FAQ / CARE</span><h2>سؤال‌های<br><em>پرتکرار.</em></h2><p>در میکروبلیدینگ، نتیجه خوب فقط به روز اجرا مربوط نیست؛ مراقبت‌های بعدی و واقع‌بینی درباره روند ترمیم هم مهم است.</p></div>
-    <div class="faq-list">
-      <details><summary>میکروبلیدینگ دقیقاً چیست؟ <span>＋</span></summary><p>روشی برای ایجاد ظاهر تارهای طبیعی در ابرو با طراحی و اجرای بسیار ظریف است. مناسب بودن آن باید با توجه به پوست، ابرو و سابقه کارهای قبلی بررسی شود.</p></details>
-      <details><summary>قبل از کار چه چیزهایی بررسی می‌شود؟ <span>＋</span></summary><p>فرم صورت، تقارن، تراکم، جهت رشد، رنگ مو و ابرو، سابقه کار قبلی و نتیجه‌ای که دوست داری دیده شود.</p></details>
-      <details><summary>آیا نتیجه بلافاصله نهایی است؟ <span>＋</span></summary><p>نه. ظاهر ابرو در روزهای اول ثابت نیست و با روند ترمیم تغییر می‌کند؛ ارزیابی نهایی باید طبق توصیه متخصص انجام شود.</p></details>
-      <details><summary>اگر قبلاً ابرو کار شده باشد چه؟ <span>＋</span></summary><p>باید وضعیت رنگ و فرم قبلی بررسی شود. در بعضی موارد ممکن است ابتدا اصلاح یا ارزیابی اثر کار قبلی لازم باشد.</p></details>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <img class="footer-rose footer-rose-right" src="assets/images/rose-cluster.webp" alt="" aria-hidden="true">
-  <img class="footer-rose footer-rose-left" src="assets/images/rose-cluster.webp" alt="" aria-hidden="true">
-  <div class="container footer-inner">
-    <div class="footer-logo-wrap"><img src="assets/images/songul-logo.png" class="footer-logo" alt="سون گول حامد"><span>SON GOOL HAMED · MICROBLADING</span></div>
-    <h2>ظرافتی که<br><em>چهره را کامل‌تر نشان می‌دهد.</em></h2>
-    <a class="gold-btn" href="#booking">شروع رزرو <span>↙</span></a>
-    <div class="footer-bottom"><small>© 2026 Son Gool Hamed</small><div><a href="#portfolio">نمونه‌کارها</a><a href="#before-after">قبل و بعد</a><a href="#booking">رزرو</a><a href="#top">بازگشت به بالا ↑</a></div></div>
-  </div>
-</footer>
+<footer class="site-footer"><div class="wrap footer-grid"><div><img src="assets/images/songul-logo.png" class="footer-logo" alt="سون گول حامد"><div class="footer-brand">SON GOOL HAMED</div><small>MICROBLADING · BROW ATELIER</small></div><div><b>ناوبری</b><a href="#portfolio">نمونه‌کار</a><a href="services.html">خدمات</a><a href="care.html">مراقبت</a><a href="booking.html">رزرو</a></div><div><b>راهنما</b><a href="#before-after">قبل و بعد</a><a href="services.html#faq">سؤالات متداول</a><a href="care.html#aftercare">مراقبت بعد از کار</a></div></div><div class="wrap footer-bottom"><span>© 2026 Son Gool Hamed</span><a href="#top">بازگشت به بالا ↑</a></div></footer>
 </main>
 
-<dialog class="modal" id="modal"><button class="modal-close" id="modalClose" aria-label="بستن">×</button><div class="modal-media"><img id="modalImg" alt=""></div><div class="modal-content"><span id="modalMeta" class="eyebrow"></span><h3 id="modalTitle"></h3><p id="modalDesc"></p><div class="modal-actions"><button class="gold-btn" id="modalBook">انتخاب برای رزرو <span>↙</span></button><button class="light-btn" id="modalFav">ذخیره مدل</button></div></div></dialog>
-
-<nav class="mobile-dock" aria-label="منوی سریع"><a href="#top"><span>⌂</span>خانه</a><a href="#portfolio"><span>✦</span>مدل‌ها</a><a href="#before-after"><span>↔</span>قبل/بعد</a><a class="dock-cta" href="#booking"><span>◌</span>رزرو</a></nav>
-<script src="assets/script.js" defer></script>
+<nav class="mobile-dock" aria-label="دسترسی سریع"><a href="index.html"><span>⌂</span>خانه</a><a href="#portfolio"><span>✦</span>مدل‌ها</a><a href="#before-after"><span>↔</span>قبل/بعد</a><a class="dock-hot" href="booking.html"><span>◌</span>رزرو</a></nav>
 </body>
 </html>
