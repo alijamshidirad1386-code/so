@@ -1,0 +1,11 @@
+{
+  "name":"microblading.songul",
+  "short_name":"Songul Brows",
+  "lang":"fa-IR",
+  "dir":"rtl",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#ffffff",
+  "theme_color":"#18181b",
+  "icons":[{"src":"assets/logo.svg","sizes":"64x64","type":"image/svg+xml"}]
+}
